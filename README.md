@@ -26,7 +26,7 @@ No está diseñado para obtener accesos no autorizados, vulnerar sistemas ni fac
 ## Estructura del repositorio
 ├── src/ # Código del modelo, entrenamiento y utilidades
 
-├── data/ # Conjuntos de datos permitidos para investigación
+├── data/ # Conjunto de datos para entrenamiento, obtenido de https://gist.github.com/PeterStaev/e707c22307537faeca7bb0893fdc18b7
 
 ├── experiments/ # Scripts de evaluación y generación
 
