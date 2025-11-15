@@ -23,7 +23,6 @@ alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^
 stoi = {c: i + 1 for i, c in enumerate(alphabet)}
 stoi["<pad>"] = 0
 VOCAB_SIZE = len(stoi)
-print(VOCAB_SIZE)
 itos = {i: c for c, i in stoi.items()}
 
 # ---------------------------------------------------------
