@@ -1,0 +1,60 @@
+# Entorno virtual
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos de configuración de Python
+*.env
+*.egg-info/
+*.egg
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Configuración de IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+
+# Mac OS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Python bytecode y caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments y lock files
+.venv/
+venv/
+env/
+poetry.lock
+Pipfile.lock
+uv.lock
+
+
+# Archivos temporales
+*.tmp
+*.log
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# IDEs
+.vscode/
+.idea/
+
+# Sistemas
+.DS_Store
+Thumbs.db
