@@ -26,8 +26,7 @@ No está diseñado para obtener accesos no autorizados, vulnerar sistemas ni fac
 ## Estructura del repositorio
 ├── src/ # Código del modelo, entrenamiento y utilidades
 
-├── data/ # Conjunto de datos para entrenamiento, obtenido de https://gist.github.com/PeterStaev/e707c22307537faeca7bb0893fdc18b7
-
+├── data/ # Conjunto de datos para entrenamiento
 ├── experiments/ # Scripts de evaluación y generación
 
 ├── reports/ # Documentación técnica y resultados
@@ -51,14 +50,15 @@ pip install -r requirements.txt
 ```
 
 ### 3. Preparar el conjunto de datos
-Seguir las indicaciones del directorio data/.
+Datos ya descargados del repositorio https://gist.github.com/PeterStaev/e707c22307537faeca7bb0893fdc18b7
+
 
 ### 4. Entrenar el modelo
 ```bash
-python src/train.py
+python -m src.train.py
 ```
 
 ### 5. Generar contraseñas sintéticas para análisis
 ```bash
-python src/generate.py
+python -m src.generator   
 ```
