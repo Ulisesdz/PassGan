@@ -26,10 +26,15 @@ No está diseñado para obtener accesos no autorizados, vulnerar sistemas ni fac
 ## Estructura del repositorio
 /
 ├── src/ # Código del modelo, entrenamiento y utilidades
+
 ├── data/ # Conjuntos de datos permitidos para investigación
+
 ├── experiments/ # Scripts de evaluación y generación
+
 ├── reports/ # Documentación técnica y resultados
+
 ├── requirements.txt
+
 └── README.md
 
 ## Cómo ejecutar el proyecto
