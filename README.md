@@ -24,7 +24,6 @@ El propósito de este proyecto es estrictamente académico. Se centra en compren
 No está diseñado para obtener accesos no autorizados, vulnerar sistemas ni facilitar actividad maliciosa. Cada experimento debe realizarse únicamente en entornos propios, controlados y con autorización explícita.
 
 ## Estructura del repositorio
-/
 ├── src/ # Código del modelo, entrenamiento y utilidades
 
 ├── data/ # Conjuntos de datos permitidos para investigación
