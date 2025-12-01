@@ -27,9 +27,12 @@ No está diseñado para obtener accesos no autorizados, vulnerar sistemas ni fac
 ├── src/ # Código del modelo, entrenamiento y utilidades
 
 ├── data/ # Conjunto de datos para entrenamiento
+
 ├── experiments/ # Scripts de evaluación y generación
 
 ├── reports/ # Documentación técnica y resultados
+
+├── results/ # Resultados y modelos entrenados
 
 ├── requirements.txt
 
@@ -40,7 +43,7 @@ No está diseñado para obtener accesos no autorizados, vulnerar sistemas ni fac
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/usuario/passgan.git
+git clone https://github.com/Ulisesdz/PassGan.git
 cd passgan
 ```
 
@@ -55,7 +58,7 @@ Datos ya descargados del repositorio https://gist.github.com/PeterStaev/e707c223
 
 ### 4. Entrenar el modelo
 ```bash
-python -m src.train.py
+python -m src.train
 ```
 
 ### 5. Generar contraseñas sintéticas para análisis
