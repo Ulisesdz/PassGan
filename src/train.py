@@ -19,9 +19,7 @@ from src.utils import (
     save_gan_losses,
 )
 
-# ---------------------------------------------------------
 # HYPERPARAMETERS
-# ---------------------------------------------------------
 DATA_PATH = "data/PasswordDictionary.txt"
 SEQ_LEN = 12
 BATCH_SIZE = 64
@@ -38,9 +36,7 @@ GUMBEL_TAU = 1.0  # temperature for Gumbel-Softmax
 
 set_seed(42)
 
-# ---------------------------------------------------------
 # LOAD DATASET AND BUILD VOCAB
-# ---------------------------------------------------------
 def load_passwords(path: str):
     if not os.path.exists(path):
         raise FileNotFoundError(f"[ERROR] Dataset file '{path}' not found.")
@@ -57,9 +53,7 @@ password_list = load_passwords(DATA_PATH)
 dataset = PasswordDataset(password_list, stoi, SEQ_LEN)
 dataloader = DataLoader(dataset, batch_size=BATCH_SIZE, shuffle=True)
 
-# ---------------------------------------------------------
 # INITIALIZE MODELS AND OPTIMIZERS
-# ---------------------------------------------------------
 generator = Generator(
     z_dim=Z_DIM,
     hidden_dim=HIDDEN_DIM,
@@ -78,9 +72,7 @@ criterion = nn.BCELoss()
 g_opt = optim.Adam(generator.parameters(), lr=LR_GEN, betas=(0.5, 0.999))
 d_opt = optim.Adam(discriminator.parameters(), lr=LR_DISC, betas=(0.5, 0.999))
 
-# ---------------------------------------------------------
 # TRAINING LOOP
-# ---------------------------------------------------------
 d_real_losses, d_fake_losses, d_losses, g_losses = [], [], [], []
 saved_epochs, saved_samples = [], []
 
@@ -91,9 +83,8 @@ for epoch in range(1, EPOCHS + 1):
         real = real.to(DEVICE)
         batch_size = real.size(0)
 
-        # -----------------------------
+        
         # TRAIN DISCRIMINATOR
-        # -----------------------------
         d_opt.zero_grad()
 
         # Label smoothing for real labels
@@ -115,9 +106,8 @@ for epoch in range(1, EPOCHS + 1):
         d_loss.backward()
         d_opt.step()
 
-        # -----------------------------
+        
         # TRAIN GENERATOR
-        # -----------------------------
         g_opt.zero_grad()
 
         noise = get_noise(batch_size, Z_DIM, DEVICE)
@@ -146,9 +136,7 @@ for epoch in range(1, EPOCHS + 1):
         saved_epochs.append(epoch)
         saved_samples.append(decoded)
 
-# ---------------------------------------------------------
 # SAVE RESULTS
-# ---------------------------------------------------------
 os.makedirs("results", exist_ok=True)
 
 save_generated_samples(

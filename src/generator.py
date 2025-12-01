@@ -6,9 +6,7 @@ import torch
 from src.model import Generator
 from src.utils import get_noise, decode_tokens
 
-# ---------------------------------------------------------
-#               CONFIGURATION
-# ---------------------------------------------------------
+# CONFIGURATION
 
 MODEL_PATH = "results/generator.pt"
 Z_DIM = 128
@@ -25,9 +23,7 @@ stoi["<pad>"] = 0
 VOCAB_SIZE = len(stoi)
 itos = {i: c for c, i in stoi.items()}
 
-# ---------------------------------------------------------
-#               INITIALIZE GENERATOR
-# ---------------------------------------------------------
+# INITIALIZE GENERATOR
 
 generator = Generator(
     z_dim=Z_DIM,
@@ -41,9 +37,7 @@ generator = Generator(
 generator.load_state_dict(torch.load(MODEL_PATH, map_location=DEVICE))
 generator.eval()
 
-# ---------------------------------------------------------
-#               GENERATE PASSWORDS
-# ---------------------------------------------------------
+# GENERATE PASSWORDS
 
 with torch.no_grad():
     noise = get_noise(NUM_SAMPLES, Z_DIM, DEVICE)
